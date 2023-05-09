@@ -1,14 +1,19 @@
-## Please take a look at this [issue](https://github.com/alinz/react-native-webview-bridge/issues/109) first
+<!-- ## Please take a look at this [issue](https://github.com/alinz/react-native-webview-bridge/issues/109) first -->
 
 # React Native WebView Javascript Bridge
 
-I have been testing and reading a lot of way to safely create a bridge between react-native and webview. I'm happy to announced that the wait is over and from **React-Native 0.20 and above**, the bridge is fully functional.
+<!-- I have been testing and reading a lot of way to safely create a bridge between react-native and webview. I'm happy to announced that the wait is over and from **React-Native 0.20 and above**, the bridge is fully functional. -->
 
 ## Installation
 
 In order to use this extension, you have to do the following steps:
 
-in your react-native project, run `npm install react-native-webview-bridge --save`
+in your react-native project,
+run `npm install @heryordejy/rn-webview-bridge --save`
+
+###### or
+
+run `yarn add @heryordejy/rn-webview-bridge`
 
 ### iOS
 
@@ -21,7 +26,7 @@ in your react-native project, run `npm install react-native-webview-bridge --sav
 <p align="center">
     <img src ="https://raw.githubusercontent.com/alinz/react-native-webview-bridge/master/doc/assets/02.png" />
 </p>
-4. navigate to `node_modules/react-native-webview-bridge/ios` and add `React-Native-Webview-Bridge.xcodeproj` folder
+4. navigate to `node_modules/@heryordejy/rn-webview-bridge/ios` and add `React-Native-Webview-Bridge.xcodeproj` folder
 <p align="center">
     <img src ="https://raw.githubusercontent.com/alinz/react-native-webview-bridge/master/doc/assets/03.png" />
 </p>
@@ -60,14 +65,14 @@ protected List<ReactPackage> getPackages() {
 > you might have multiple 3rd party libraries, make sure that you don't create multiple include.
 
 ```
-include ':app', ':rn-webview-bridge'
-project(':rn-webview-bridge').projectDir = new File(rootProject.projectDir, '../node_modules/rn-webview-bridge/android')
+include ':app', ':@heyordejy/rn-webview-bridge'
+project(':@heyordejy/rn-webview-bridge').projectDir = new File(rootProject.projectDir, '../node_modules/rn-webview-bridge/android')
 ```
 
 4. edit `android/app/build.gradle` and add the following line inside `dependencies`
 
 ```
-compile project(':rn-webview-bridge')
+compile project(':@heyordejy/rn-webview-bridge')
 ```
 
 5. run `react-native run-android` to see if everything is compilable.
@@ -79,13 +84,13 @@ just import the module with one of your choices way:
 ** CommonJS style **
 
 ```js
-var WebViewBridge = require("rn-webview-bridge");
+var WebViewBridge = require("@heyordejy/rn-webview-bridge");
 ```
 
 ** ES6/ES2015 style **
 
 ```js
-import WebViewBridge from "rn-webview-bridge";
+import WebViewBridge from "@heyordejy/rn-webview-bridge";
 ```
 
 `WebViewBridge` is an extension of `WebView`. It injects special script into any pages once it loads. Also it extends the functionality of `WebView` by adding 1 new method and 1 new props.

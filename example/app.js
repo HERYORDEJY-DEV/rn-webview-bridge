@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { StyleSheet, View } from "react-native";
-import WebViewBridge from "rn-webview-bridge";
+import WebViewBridge from "@heryordejy/rn-webview-bridge";
 
 const injectScript = `
   (function () {

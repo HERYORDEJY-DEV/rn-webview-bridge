@@ -49,15 +49,15 @@ var WebViewBridgeState = keyMirror({
 });
 
 var NavigationType = {
-  click: RCTWebViewBridgeManager.NavigationType.LinkClicked,
-  formsubmit: RCTWebViewBridgeManager.NavigationType.FormSubmitted,
-  backforward: RCTWebViewBridgeManager.NavigationType.BackForward,
-  reload: RCTWebViewBridgeManager.NavigationType.Reload,
-  formresubmit: RCTWebViewBridgeManager.NavigationType.FormResubmitted,
-  other: RCTWebViewBridgeManager.NavigationType.Other,
+  click: RCTWebViewBridgeManager?.NavigationType?.LinkClicked,
+  formsubmit: RCTWebViewBridgeManager?.NavigationType?.FormSubmitted,
+  backforward: RCTWebViewBridgeManager?.NavigationType?.BackForward,
+  reload: RCTWebViewBridgeManager?.NavigationType?.Reload,
+  formresubmit: RCTWebViewBridgeManager?.NavigationType?.FormResubmitted,
+  other: RCTWebViewBridgeManager?.NavigationType?.Other,
 };
 
-var JSNavigationScheme = RCTWebViewBridgeManager.JSNavigationScheme;
+var JSNavigationScheme = RCTWebViewBridgeManager?.JSNavigationScheme;
 
 type ErrorEvent = {
   domain: any,
@@ -151,7 +151,7 @@ var WebViewBridge = createReactClass({
         var shouldStart =
           this.props.onShouldStartLoadWithRequest &&
           this.props.onShouldStartLoadWithRequest(event.nativeEvent);
-        RCTWebViewBridgeManager.startLoadWithResult(
+        RCTWebViewBridgeManager?.startLoadWithResult(
           !!shouldStart,
           event.nativeEvent.lockIdentifier
         );
